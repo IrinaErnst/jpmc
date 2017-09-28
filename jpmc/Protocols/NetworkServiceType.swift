@@ -10,21 +10,19 @@ import Foundation
 import Moya
 import Result
 import JASON
-import Realm
 
 // This contains the base networking methods that make use of the MoyaProvider
 protocol NetworkServiceType {
-    var provider: MoyaProvider<NYT> { get }
-    var realmDataStore: RealmDataStoreType { get }
-    func request(target: NYT, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void)
-    func requestObject<T: JSONDeserializable>(target: NYT,
+    var provider: MoyaProvider<Apple> { get }
+    func request(target: Apple, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void)
+    func requestObject<T: JSONDeserializable>(target: Apple,
                                               completion: @escaping (Result<T, Moya.MoyaError>) -> Void)
 }
 
 extension NetworkServiceType {
     
     // Request for an JSONDeserializableto the target via the provider.
-    func request(target: NYT, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
+    func request(target: Apple, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
         
         self.provider.request(target) { result in
             switch result {
@@ -45,7 +43,7 @@ extension NetworkServiceType {
     }
     
     // Request for an object that conforms to JSONDeserializable
-    func requestObject<T: JSONDeserializable>(target: NYT,
+    func requestObject<T: JSONDeserializable>(target: Apple,
                                               completion: @escaping (Result<T, Moya.MoyaError>) -> Void) {
         self.request(target: target) { result in
             switch result {
@@ -64,7 +62,7 @@ extension NetworkServiceType {
     }
     
     // Makes a request array to the target via the provider.
-    func requestArray(target: NYT, completion: @escaping (Result<JSONArray, Moya.MoyaError>) -> Void) {
+    func requestArray(target: Apple, completion: @escaping (Result<JSONArray, Moya.MoyaError>) -> Void) {
         
         self.provider.request(target) { result in
             switch result {
