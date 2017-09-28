@@ -18,6 +18,7 @@
 		A7F30D7B1F7D917600E81F85 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D7A1F7D917600E81F85 /* JSON.swift */; };
 		A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D7C1F7D961800E81F85 /* Provider.swift */; };
 		A7F30D811F7D98E400E81F85 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D801F7D98E400E81F85 /* NetworkServiceType.swift */; };
+		A7F30D841F7D9B1800E81F85 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D831F7D9B1800E81F85 /* Deserializable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A7F30D7A1F7D917600E81F85 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A7F30D7C1F7D961800E81F85 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		A7F30D801F7D98E400E81F85 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		A7F30D831F7D9B1800E81F85 /* Deserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
 		ECA8EEC4FFE633BB3C839126 /* Pods_jpmc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jpmc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A7F30D801F7D98E400E81F85 /* NetworkServiceType.swift */,
+				A7F30D831F7D9B1800E81F85 /* Deserializable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				A7F30D811F7D98E400E81F85 /* NetworkServiceType.swift in Sources */,
 				A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */,
 				A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */,
+				A7F30D841F7D9B1800E81F85 /* Deserializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
