@@ -16,6 +16,7 @@
 		A7F30D761F7D8BC600E81F85 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */; };
 		A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D781F7D8C3400E81F85 /* Constants.swift */; };
 		A7F30D7B1F7D917600E81F85 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D7A1F7D917600E81F85 /* JSON.swift */; };
+		A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D7C1F7D961800E81F85 /* Provider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
 		A7F30D781F7D8C3400E81F85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7F30D7A1F7D917600E81F85 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A7F30D7C1F7D961800E81F85 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		ECA8EEC4FFE633BB3C839126 /* Pods_jpmc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jpmc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,10 +88,9 @@
 			children = (
 				A7F30D621F7D896200E81F85 /* AppDelegate.swift */,
 				A7F30D771F7D8C0800E81F85 /* Common */,
+				A7F30D7E1F7D961E00E81F85 /* Services */,
 				A7F30D741F7D8B9E00E81F85 /* Controllers */,
-				A7F30D661F7D896200E81F85 /* Main.storyboard */,
-				A7F30D691F7D896200E81F85 /* Assets.xcassets */,
-				A7F30D6B1F7D896200E81F85 /* LaunchScreen.storyboard */,
+				A7F30D7F1F7D963200E81F85 /* Recources */,
 				A7F30D6E1F7D896200E81F85 /* Info.plist */,
 			);
 			path = jpmc;
@@ -111,6 +112,24 @@
 				A7F30D7A1F7D917600E81F85 /* JSON.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A7F30D7E1F7D961E00E81F85 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7F30D7C1F7D961800E81F85 /* Provider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A7F30D7F1F7D963200E81F85 /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				A7F30D661F7D896200E81F85 /* Main.storyboard */,
+				A7F30D691F7D896200E81F85 /* Assets.xcassets */,
+				A7F30D6B1F7D896200E81F85 /* LaunchScreen.storyboard */,
+			);
+			path = Recources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +259,7 @@
 				A7F30D7B1F7D917600E81F85 /* JSON.swift in Sources */,
 				A7F30D631F7D896200E81F85 /* AppDelegate.swift in Sources */,
 				A7F30D761F7D8BC600E81F85 /* LoggerPlugin.swift in Sources */,
+				A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */,
 				A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67D1BD2B8002A1E6147C3528 /* Pods-jpmc.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SH8CE5DBCP;
@@ -393,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10DBC56BA93135157960377D /* Pods-jpmc.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SH8CE5DBCP;

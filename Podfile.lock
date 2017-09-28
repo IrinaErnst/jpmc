@@ -6,7 +6,7 @@ PODS:
   - Moya/Core (9.0.0):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Result (3.2.3)
+  - Result (3.2.4)
 
 DEPENDENCIES:
   - JASON (~> 3.1)
@@ -17,7 +17,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   JASON: c1204b01c9979eef35b6948ca939aac5e7bef081
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
-  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
 PODFILE CHECKSUM: 63d31987ce3a0323986e66a597d10ce2b2952a85
 
