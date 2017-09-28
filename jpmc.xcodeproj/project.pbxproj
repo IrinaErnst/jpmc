@@ -14,6 +14,7 @@
 		A7F30D6A1F7D896200E81F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F30D691F7D896200E81F85 /* Assets.xcassets */; };
 		A7F30D6D1F7D896200E81F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F30D6B1F7D896200E81F85 /* LaunchScreen.storyboard */; };
 		A7F30D761F7D8BC600E81F85 /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */; };
+		A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D781F7D8C3400E81F85 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A7F30D6C1F7D896200E81F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7F30D6E1F7D896200E81F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		A7F30D781F7D8C3400E81F85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ECA8EEC4FFE633BB3C839126 /* Pods_jpmc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jpmc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A7F30D621F7D896200E81F85 /* AppDelegate.swift */,
-				A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */,
+				A7F30D771F7D8C0800E81F85 /* Common */,
 				A7F30D741F7D8B9E00E81F85 /* Controllers */,
 				A7F30D661F7D896200E81F85 /* Main.storyboard */,
 				A7F30D691F7D896200E81F85 /* Assets.xcassets */,
@@ -97,6 +99,15 @@
 				A7F30D641F7D896200E81F85 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A7F30D771F7D8C0800E81F85 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A7F30D751F7D8BC600E81F85 /* LoggerPlugin.swift */,
+				A7F30D781F7D8C3400E81F85 /* Constants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				A7F30D651F7D896200E81F85 /* ViewController.swift in Sources */,
 				A7F30D631F7D896200E81F85 /* AppDelegate.swift in Sources */,
 				A7F30D761F7D8BC600E81F85 /* LoggerPlugin.swift in Sources */,
+				A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
