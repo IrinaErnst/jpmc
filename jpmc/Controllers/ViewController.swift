@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let term = ["Tom", "Waits"]
+        let term = ["Josh", "Ritter"]
         searchInApple(with: term)
     }
 
@@ -29,8 +29,8 @@ class ViewController: UIViewController {
     func searchInApple(with term: [String]) {
         appleService.search(with: term, completion: { result in
             switch result {
-            case .success(let result):
-                print("❤️❤️❤️ RESULT: \(result)")
+            case .success(let trucks):
+                print("❤️❤️❤️ RESULT: \(trucks)")
                 return
             case let .failure(error):
                 print(error)

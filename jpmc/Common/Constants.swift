@@ -13,12 +13,12 @@ struct Constants {
     
     struct Apple {
         private init() {}
-        static let baseURLString = "https://itunes.apple.com/"
+        static let baseURLString = "https://itunes.apple.com"
     }
     
     struct LyricWikia {
         private init() {}
-        static let baseURLString = "http://lyrics.wikia.com/"
+        static let baseURLString = "http://lyrics.wikia.com"
     }
 }
 

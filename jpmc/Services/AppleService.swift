@@ -25,16 +25,24 @@ struct AppleService: NetworkServiceType {
         self.provider = provider
     }
     
-    func search(with term: [String], completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
+    func search(with term: [String], completion: @escaping (Result<[Truck], Moya.MoyaError>) -> Void) {
         let term = term.joined(separator: "+")
         
         let target = Apple.search(dictionary: ["term": term])
+        //requestArray(target: target) { result in
         request(target: target) { result in
             switch result {
             case let .success(json):
-                
                 print("❤️ JSON: \(json)")
-                completion(.success(json))
+                if let trucksArray = json["results"] as? JSONArray {
+                    var trucks = [Truck]()
+                    for truck in trucksArray {
+                        trucks.append(Truck.deserialize(from: truck))
+                    }
+                    //trucks = Truck.deserialize(from: trucksArray)
+                    print("❤️ TRUCKS: \(trucks)")
+                    completion(.success(trucks))
+                }
             case let .failure(error):
                 completion(.failure(MoyaError.underlying(error, nil)))
             }
