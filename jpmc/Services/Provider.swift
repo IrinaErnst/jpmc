@@ -64,7 +64,7 @@ extension Apple: TargetType {
     var task: Task {
         switch self {
         case .search(let dictionary):
-            return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
+            return .requestParameters(parameters: dictionary, encoding: URLEncoding.queryString)
         default: return .requestPlain
         }
     }

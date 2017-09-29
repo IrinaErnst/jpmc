@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6294275CC474404D18531420 /* Pods_jpmc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA8EEC4FFE633BB3C839126 /* Pods_jpmc.framework */; };
+		A7E270CA1F7DF61E0074C846 /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270C91F7DF61E0074C846 /* Truck.swift */; };
 		A7F30D631F7D896200E81F85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D621F7D896200E81F85 /* AppDelegate.swift */; };
 		A7F30D651F7D896200E81F85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F30D641F7D896200E81F85 /* ViewController.swift */; };
 		A7F30D681F7D896200E81F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F30D661F7D896200E81F85 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		10DBC56BA93135157960377D /* Pods-jpmc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jpmc.release.xcconfig"; path = "Pods/Target Support Files/Pods-jpmc/Pods-jpmc.release.xcconfig"; sourceTree = "<group>"; };
 		67D1BD2B8002A1E6147C3528 /* Pods-jpmc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jpmc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jpmc/Pods-jpmc.debug.xcconfig"; sourceTree = "<group>"; };
+		A7E270C91F7DF61E0074C846 /* Truck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		A7F30D5F1F7D896200E81F85 /* jpmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jpmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F30D621F7D896200E81F85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F30D641F7D896200E81F85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A7E270CB1F7DF6270074C846 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7E270C91F7DF61E0074C846 /* Truck.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A7F30D561F7D896200E81F85 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 				A7F30D771F7D8C0800E81F85 /* Common */,
 				A7F30D821F7D98E800E81F85 /* Protocols */,
 				A7F30D7E1F7D961E00E81F85 /* Services */,
+				A7E270CB1F7DF6270074C846 /* Models */,
 				A7F30D741F7D8B9E00E81F85 /* Controllers */,
 				A7F30D7F1F7D963200E81F85 /* Recources */,
 				A7F30D6E1F7D896200E81F85 /* Info.plist */,
@@ -280,6 +291,7 @@
 				A7F30D631F7D896200E81F85 /* AppDelegate.swift in Sources */,
 				A7F30D761F7D8BC600E81F85 /* LoggerPlugin.swift in Sources */,
 				A7F30D881F7D9B8E00E81F85 /* AppleService.swift in Sources */,
+				A7E270CA1F7DF61E0074C846 /* Truck.swift in Sources */,
 				A7F30D811F7D98E400E81F85 /* NetworkServiceType.swift in Sources */,
 				A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */,
 				A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */,

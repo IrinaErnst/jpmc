@@ -3,6 +3,9 @@ import Foundation
 /// These functions are default mappings to `MoyaProvider`'s properties: endpoints, requests, manager, etc.
 public extension MoyaProvider {
     public final class func defaultEndpointMapping(for target: Target) -> Endpoint<Target> {
+        //var url = target.baseURL.appendingPathComponent(target.path).absoluteString.replacingOccurrences(of: "2", with: "+")
+       // url = url.replacingOccurrences(of: "2", with: "+")
+        
         return Endpoint(
             url: URL(target: target).absoluteString,
             sampleResponseClosure: { .networkResponse(200, target.sampleData) },

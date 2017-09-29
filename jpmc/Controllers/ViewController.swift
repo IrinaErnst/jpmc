@@ -10,14 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Properties
+    private lazy var appleService: AppleService = AppleService()
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let term = ["Tom", "Waits"]
+        searchInApple(with: term)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Networking
+    func searchInApple(with term: [String]) {
+        appleService.search(with: term, completion: { result in
+            switch result {
+            case .success(let result):
+                print("❤️❤️❤️ RESULT: \(result)")
+                return
+            case let .failure(error):
+                print(error)
+                return
+            }
+        })
     }
 
 

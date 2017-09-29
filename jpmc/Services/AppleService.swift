@@ -25,8 +25,10 @@ struct AppleService: NetworkServiceType {
         self.provider = provider
     }
     
-    func search(for target: Apple, completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
+    func search(with term: [String], completion: @escaping (Result<JSONDictionary, Moya.MoyaError>) -> Void) {
+        let term = term.joined(separator: "+")
         
+        let target = Apple.search(dictionary: ["term": term])
         request(target: target) { result in
             switch result {
             case let .success(json):
