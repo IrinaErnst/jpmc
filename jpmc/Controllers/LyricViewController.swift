@@ -12,7 +12,7 @@ class LyricViewController: UIViewController {
 
     // MARK: - Properties
     private lazy var appleService: AppleService = AppleService()
-    var truck: Truck?
+    var song: Song?
 
     
     // MARK: - Lifecycle

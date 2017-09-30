@@ -8,31 +8,31 @@
 
 import UIKit
 
-final class Truck: NSObject, Deserializable {
+final class Song: NSObject, Deserializable {
 
-    var trackName: String!
+    var songTitle: String!
     var artistName: String!
     var albumName: String?
     var artworkUrl: String?
     
     // Initialiser(s)
-    init(trackName: String, artistName: String, albumName: String, artworkUrl: String) {
+    init(songTitle: String, artistName: String, albumName: String, artworkUrl: String) {
         super.init()
         
-        self.trackName = trackName
+        self.songTitle = songTitle
         self.artistName = artistName
         self.albumName = albumName
         self.artworkUrl = artworkUrl
     }
     
     // MARK: - Deserializer
-    static func deserialize(from json: JSONDictionary) -> Truck {
-        let trackName = json["trackName"] as! String
+    static func deserialize(from json: JSONDictionary) -> Song {
+        let songTitle = json["trackName"] as! String
         let artistName = json["artistName"] as! String
         let albumName = json["collectionName"] as! String
         let artworkUrl = json["artworkUrl100"] as! String
         
-        return Truck.init(trackName: trackName,
+        return Song.init(songTitle: songTitle,
                           artistName: artistName,
                           albumName: albumName,
                           artworkUrl: artworkUrl)

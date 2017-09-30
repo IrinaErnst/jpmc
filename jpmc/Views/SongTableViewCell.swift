@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TruckTableViewCell: UITableViewCell {
+class SongTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
     @IBOutlet weak var artworkImageView: UIImageView!
-    @IBOutlet weak var truckNameLabel: UILabel!
+    @IBOutlet weak var songTitleLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var albumNameLabel: UILabel!
     
@@ -25,26 +25,26 @@ class TruckTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    var truck: Truck? {
+    var song: Song? {
         
         didSet{
             
-            if let artworkUrl = truck?.artworkUrl {
+            if let artworkUrl = song?.artworkUrl {
                 if let imageURL = URL(string: artworkUrl) {
                     artworkImageView.contentMode = .scaleAspectFit
                     artworkImageView.downloadImage(url: imageURL)
                 }
             } 
             
-            if let truckName = truck?.trackName {
-                truckNameLabel.text = truckName
+            if let songTitle = song?.songTitle {
+                songTitleLabel.text = songTitle
             }
             
-            if let artistName = truck?.artistName {
+            if let artistName = song?.artistName {
                 artistNameLabel.text = artistName
             }
             
-            if let albumName = truck?.albumName {
+            if let albumName = song?.albumName {
                 albumNameLabel.text = albumName
             }
             

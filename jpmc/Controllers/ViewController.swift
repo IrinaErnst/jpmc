@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private lazy var appleService: AppleService = AppleService()
-    var trucks: [Truck] = [Truck]()
-    var selectedTruck: Truck?
+    var songs: [Song] = [Song]()
+    var selectedSong: Song?
     let cellID = "truckCell"
     
     // MARK: - Lifecycle
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     func searchInApple(with term: [String]) {
         appleService.search(with: term, completion: { [unowned self] result in
             switch result {
-            case .success(let trucks):
-                self.trucks = trucks
+            case .success(let songs):
+                self.songs = songs
                 self.tableView.reloadData()
                 return
             case let .failure(error):
@@ -55,18 +55,18 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trucks.count
+        return songs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
-                                                 for: indexPath) as! TruckTableViewCell
+                                                 for: indexPath) as! SongTableViewCell
         // Change color of the selected cell
         let backgroundCellView = UIView()
         backgroundCellView.backgroundColor = UIColor.darkGray
         cell.selectedBackgroundView = backgroundCellView
         
-        cell.truck = trucks[indexPath.row]
+        cell.song = songs[indexPath.row]
         return cell
     }
     
@@ -78,7 +78,7 @@ extension ViewController: UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "lyricSegue") {
             if let lyricViewController = segue.destination as? LyricViewController {
-                lyricViewController.truck = selectedTruck
+                lyricViewController.song = selectedSong
             }
         }
     }
@@ -90,8 +90,8 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let lyricViewController  = LyricViewController()
-        selectedTruck = trucks[indexPath.row]
-        lyricViewController.truck = selectedTruck
+        selectedSong = songs[indexPath.row]
+        lyricViewController.song = selectedSong
         performSegue(withIdentifier: "lyricSegue", sender: self)
     }
     
