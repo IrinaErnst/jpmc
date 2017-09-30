@@ -30,14 +30,14 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="Iqa-Lh-oWV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="truckCell" rowHeight="70" id="Iqa-Lh-oWV" customClass="TruckTableViewCell" customModule="jpmc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iqa-Lh-oWV" id="9CT-Yc-6eL">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I2w-3L-yLs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artwork" translatesAutoresizingMaskIntoConstraints="NO" id="I2w-3L-yLs">
                                                     <rect key="frame" x="20" y="9" width="52" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="52" id="f2R-3E-U7v"/>
@@ -88,6 +88,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="albumNameLabel" destination="rLN-nl-pQV" id="8ry-HE-LjL"/>
+                                            <outlet property="artistNameLabel" destination="kEm-Sc-zEZ" id="EH1-Au-V6b"/>
+                                            <outlet property="artworkImageView" destination="I2w-3L-yLs" id="Uba-ov-55d"/>
+                                            <outlet property="truckNameLabel" destination="hDO-fM-6hw" id="ReF-D3-FRp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -105,7 +111,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="tGt-vT-KJR" id="3Cd-Ed-wOh"/>
                         <outlet property="searchDisplayController" destination="ZAq-OS-qKC" id="4Uf-Ma-Rb1"/>
+                        <outlet property="tableView" destination="enY-Gi-lhA" id="ptH-aR-zFE"/>
+                        <segue destination="gMS-TX-53D" kind="show" identifier="lyricSegue" id="Y0u-lZ-eao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -120,5 +129,23 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="119.1904047976012"/>
         </scene>
+        <!--Lyric View Controller-->
+        <scene sceneID="acC-IJ-jMR">
+            <objects>
+                <viewController id="gMS-TX-53D" customClass="LyricViewController" customModule="jpmc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rot-GP-zbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="DUL-fH-xNZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fR-Zo-59F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="117"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Artwork" width="150" height="150"/>
+    </resources>
 </document>

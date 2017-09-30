@@ -23,8 +23,11 @@ func JSONResponseDataFormatter(_ data: Data) -> Data {
 
 // MARK: - Target
 enum Apple {
-    // GET  /search?parameterkeyvalue
+    //Apple GET  /search?parameterkeyvalue
     case search(dictionary: JSONDictionary)
+    
+    //LyricWikia GET  /api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json
+    case getSong(dictionary: JSONDictionary)
 }
 
 // MARK: - Endpoint closure.  Adds the API key to the header for the necessary targets.
@@ -40,22 +43,31 @@ extension Apple: TargetType {
     var headers: [String : String]? { return [ :/*"api-key": Constants.NewYorkTimes.books*/ ]}
     
     // MARK: Base URL
-    var baseURL: URL { return URL(string: Constants.Apple.baseURLString)! }
+    var baseURL: URL {
+        switch self {
+        case .search(dictionary: _):
+            return URL(string: Constants.Apple.baseURLString)!
+        case .getSong(dictionary: _):
+            return URL(string: Constants.LyricWikia.baseURLString)!
+        }
+    }
     
     // MARK: - Path
     var path: String {
         switch self {
-            
-        // GET List of books
+
         case .search(dictionary: _):
             return "/search"
+        case .getSong(dictionary: _):
+            return "/api.php?func=getSong"
         }
     }
     
     // MARK: - Method
     var method: Moya.Method {
         switch self {
-        case .search(dictionary: _):
+        case .search(dictionary: _),
+             .getSong(dictionary: _):
             return .get
         }
     }
@@ -63,9 +75,10 @@ extension Apple: TargetType {
     // MARK: - Task
     var task: Task {
         switch self {
-        case .search(let dictionary):
+        case .search(let dictionary),
+             .getSong(let dictionary):
             return .requestParameters(parameters: dictionary, encoding: URLEncoding.default)
-        default: return .requestPlain
+        // default: return .requestPlain
         }
     }
     
@@ -74,6 +87,8 @@ extension Apple: TargetType {
         switch self {
             
         case .search(let dictionary):
+            return dictionary
+        case .getSong(let dictionary):
             return dictionary
         }
     }
