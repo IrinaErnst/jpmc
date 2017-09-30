@@ -19,17 +19,7 @@ class LyricViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        appleService.search(with: term, completion: { [unowned self] result in
-//            switch result {
-//            case .success(let trucks):
-//                self.trucks = trucks
-//                self.tableView.reloadData()
-//                return
-//            case let .failure(error):
-//                print(error)
-//                return
-//            }
-//        })
+
     }
 
     override func didReceiveMemoryWarning() {

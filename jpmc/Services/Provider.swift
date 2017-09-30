@@ -22,7 +22,7 @@ func JSONResponseDataFormatter(_ data: Data) -> Data {
 
 
 // MARK: - Target
-enum Apple {
+enum JPMC {
     //Apple GET  /search?parameterkeyvalue
     case search(dictionary: JSONDictionary)
     
@@ -31,13 +31,13 @@ enum Apple {
 }
 
 // MARK: - Endpoint closure.  Adds the API key to the header for the necessary targets.
-let endpointClosure = { (target: Apple) -> Endpoint<Apple> in
-    let defaultEndpoint = MoyaProvider<Apple>.defaultEndpointMapping(for: target)
+let endpointClosure = { (target: JPMC ) -> Endpoint<JPMC> in
+    let defaultEndpoint = MoyaProvider<JPMC>.defaultEndpointMapping(for: target)
     return defaultEndpoint.adding(newHTTPHeaderFields: ["Content-Type": "application/json"])
 }
 
 // MARK: Conformance to TargetType
-extension Apple: TargetType {
+extension JPMC: TargetType {
     
     // MARK: Header
     var headers: [String : String]? { return [ :/*"api-key": Constants.NewYorkTimes.books*/ ]}

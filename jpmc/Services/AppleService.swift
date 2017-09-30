@@ -15,10 +15,10 @@ import JASON
 struct AppleService: NetworkServiceType {
     
     // MARK: - Properties
-    private(set) var provider: MoyaProvider<Apple>
+    private(set) var provider: MoyaProvider<JPMC>
     
     // MARK: - Initializers(s)
-    init(provider: MoyaProvider<Apple> = MoyaProvider<Apple>(endpointClosure: endpointClosure,
+    init(provider: MoyaProvider<JPMC> = MoyaProvider<JPMC>(endpointClosure: endpointClosure,
                                                          manager: DefaultAlamofireManager.sharedManager,
                                                          plugins: [LoggerPlugin()]))
     {
@@ -28,7 +28,7 @@ struct AppleService: NetworkServiceType {
     func search(with term: [String], completion: @escaping (Result<[Truck], Moya.MoyaError>) -> Void) {
         let term = term.joined(separator: "+")
         
-        let target = Apple.search(dictionary: ["term": term])
+        let target = JPMC.search(dictionary: ["term": term])
         //requestArray(target: target) { result in
         request(target: target) { result in
             switch result {
