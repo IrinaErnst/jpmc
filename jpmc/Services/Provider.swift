@@ -59,7 +59,7 @@ extension JPMC: TargetType {
         case .search(dictionary: _):
             return "/search"
         case .getSong(dictionary: _):
-            return "/api.php?func=getSong"
+            return "/api.php"
         }
     }
     

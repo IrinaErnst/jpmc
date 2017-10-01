@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import Moya
 import Result
 import JASON
@@ -40,6 +39,8 @@ struct AppleService: NetworkServiceType {
                         songs.append(Song.deserialize(from: song))
                     }
                     completion(.success(songs))
+                } else {
+                    print("💔 ERROR: \(json)")
                 }
             case let .failure(error):
                 completion(.failure(MoyaError.underlying(error, nil)))
