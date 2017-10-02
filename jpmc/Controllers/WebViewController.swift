@@ -12,8 +12,8 @@ import WebKit
 class WebViewController: UIViewController {
 
     // MARK: - @IBOutlet(s)
-    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var webView: WKWebView!
     
     // MARK: - Propertie(s)
     var link: String?
@@ -26,10 +26,10 @@ class WebViewController: UIViewController {
         activityIndicator?.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
-        //webView.navigationDelegate = self
+        webView.navigationDelegate = self
         
         if let url = URL(string: link ?? "http://lyrics.wikia.com/wiki/Lyrics_Wiki") {
-            webView.loadRequest(URLRequest(url: url))
+            webView.load(URLRequest(url: url))
         }
     }
 

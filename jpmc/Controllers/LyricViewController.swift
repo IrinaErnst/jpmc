@@ -37,7 +37,7 @@ class LyricViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        getSongLyrics()
+        configureView()
     }
         
     // MARK: - Networking
@@ -55,16 +55,9 @@ class LyricViewController: UIViewController {
                 case .success(let song):
                     // TODO: do something
                     self.lyricsTextField.text = song.lyrics
-                    if song.lyrics?.lowercased() == "not found" {
-                        self.lyricsPermissionsTextField.isHidden = true
-                        self.lyricsWikiWebButton.isHidden = true
-                    } else {
-                        self.lyricsPermissionsTextField.isHidden = false
-                        self.lyricsWikiWebButton.isHidden = false
-                    }
                     return
                 case let .failure(error):
-                    print(error)
+                    self.handleError(title: error.localizedDescription, message: "Please try again!")
                     return
                 }
             })
@@ -73,6 +66,15 @@ class LyricViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "webSegue") {
+            if let webViewController = segue.destination as? WebViewController {
+                webViewController.link = song?.lyricsUrl
+            }
+        }
     }
     
     // MARK: - @IBAction(s)
@@ -91,10 +93,9 @@ extension LyricViewController {
     
     func configureView() {
         lyricsTextField.isUserInteractionEnabled = false
+        lyricsTextField.isHidden = false
         lyricsPermissionsTextField.isUserInteractionEnabled = false
-        lyricsPermissionsTextField.isHidden = true
-        self.lyricsWikiWebButton.isHidden = true
-        
+       
         getSongLyrics()
     }
 }

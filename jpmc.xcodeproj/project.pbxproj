@@ -11,6 +11,7 @@
 		A70135B61F7F0FCC0054FDB1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135B51F7F0FCC0054FDB1 /* String.swift */; };
 		A70135BA1F7FC7550054FDB1 /* LyricaWikieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135B91F7FC7550054FDB1 /* LyricaWikieService.swift */; };
 		A70135BC1F81E7150054FDB1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135BB1F81E7150054FDB1 /* WebViewController.swift */; };
+		A7386A3C1F81F6860065F337 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7386A3B1F81F6860065F337 /* UIViewController.swift */; };
 		A7E270CA1F7DF61E0074C846 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270C91F7DF61E0074C846 /* Song.swift */; };
 		A7E270CD1F7E99A10074C846 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270CC1F7E99A10074C846 /* SongTableViewCell.swift */; };
 		A7E270D01F7EA0370074C846 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270CF1F7EA0370074C846 /* UIImageView.swift */; };
@@ -36,6 +37,7 @@
 		A70135B51F7F0FCC0054FDB1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A70135B91F7FC7550054FDB1 /* LyricaWikieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricaWikieService.swift; sourceTree = "<group>"; };
 		A70135BB1F81E7150054FDB1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A7386A3B1F81F6860065F337 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A7E270C91F7DF61E0074C846 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		A7E270CC1F7E99A10074C846 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		A7E270CF1F7EA0370074C846 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				A7F30D7A1F7D917600E81F85 /* JSON.swift */,
 				A7E270CF1F7EA0370074C846 /* UIImageView.swift */,
 				A70135B51F7F0FCC0054FDB1 /* String.swift */,
+				A7386A3B1F81F6860065F337 /* UIViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				A7F30D651F7D896200E81F85 /* ViewController.swift in Sources */,
 				A70135BA1F7FC7550054FDB1 /* LyricaWikieService.swift in Sources */,
+				A7386A3C1F81F6860065F337 /* UIViewController.swift in Sources */,
 				A7F30D7B1F7D917600E81F85 /* JSON.swift in Sources */,
 				A7F30D631F7D896200E81F85 /* AppDelegate.swift in Sources */,
 				A7E270D01F7EA0370074C846 /* UIImageView.swift in Sources */,

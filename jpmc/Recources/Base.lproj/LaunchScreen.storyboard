@@ -32,7 +32,7 @@
                                         <color key="textColor" red="0.12236162275075912" green="0.74911248683929443" blue="0.81746155023574829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 29th, 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ1-mQ-eaG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 1st, 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ1-mQ-eaG">
                                         <rect key="frame" x="0.0" y="70.5" width="182.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
                                         <color key="textColor" red="0.12236162275075912" green="0.74911248683929443" blue="0.81746155023574829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

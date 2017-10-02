@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                 self.tableView.reloadData()
                 return
             case let .failure(error):
-                print(error)
+                self.handleError(title: error.localizedDescription, message: "Please try again!")
                 return
             }
         })

@@ -181,7 +181,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lyrics not found" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Ek-NAf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lyrics not found" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Ek-NAf">
                                 <rect key="frame" x="20" y="184" width="335" height="250"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -216,7 +216,7 @@ publishers LyricaWiki can no longer return lyrics through the LyricWiki API (whe
                                 </state>
                                 <connections>
                                     <action selector="openWebView:" destination="gMS-TX-53D" eventType="touchUpInside" id="teh-0c-ERc"/>
-                                    <segue destination="Z5g-I1-vc8" kind="show" id="Utu-7N-J9O"/>
+                                    <segue destination="Z5g-I1-vc8" kind="show" identifier="webSegue" id="Utu-7N-J9O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -265,7 +265,7 @@ publishers LyricaWiki can no longer return lyrics through the LyricWiki API (whe
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-sS-2nD">
-                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="je2-d8-ZWf"/>
                                 </constraints>
@@ -275,7 +275,7 @@ publishers LyricaWiki can no longer return lyrics through the LyricWiki API (whe
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="LyricsWiki" id="LUE-C7-gze">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="03m-5e-Vv8">
+                                        <barButtonItem key="leftBarButtonItem" image="BackButton" id="03m-5e-Vv8">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="backButtonPressed:" destination="Z5g-I1-vc8" id="rhz-5j-nMf"/>
@@ -284,12 +284,16 @@ publishers LyricaWiki can no longer return lyrics through the LyricWiki API (whe
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pS-Kj-3qF">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gC-JH-qLG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-Bc-JEb">
-                                <rect key="frame" x="162" y="350.5" width="50" height="50"/>
+                                <rect key="frame" x="162" y="351" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="T5t-Ix-k9q"/>
                                     <constraint firstAttribute="width" constant="50" id="Xn6-K5-tZf"/>
@@ -298,21 +302,21 @@ publishers LyricaWiki can no longer return lyrics through the LyricWiki API (whe
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="5pS-Kj-3qF" firstAttribute="leading" secondItem="yE9-ho-USG" secondAttribute="leading" id="0ke-Ml-ZBn"/>
                             <constraint firstItem="yyE-sS-2nD" firstAttribute="leading" secondItem="yE9-ho-USG" secondAttribute="leading" id="1i8-nH-Urq"/>
-                            <constraint firstItem="yE9-ho-USG" firstAttribute="trailing" secondItem="5pS-Kj-3qF" secondAttribute="trailing" id="CW2-zo-L0D"/>
-                            <constraint firstItem="mh3-Bc-JEb" firstAttribute="centerX" secondItem="5pS-Kj-3qF" secondAttribute="centerX" id="ZQR-3X-ait"/>
-                            <constraint firstItem="yE9-ho-USG" firstAttribute="bottom" secondItem="5pS-Kj-3qF" secondAttribute="bottom" id="dQQ-tF-cwz"/>
-                            <constraint firstItem="5pS-Kj-3qF" firstAttribute="top" secondItem="yyE-sS-2nD" secondAttribute="bottom" id="rvu-8D-foJ"/>
-                            <constraint firstItem="mh3-Bc-JEb" firstAttribute="centerY" secondItem="5pS-Kj-3qF" secondAttribute="centerY" id="tH7-Rv-NK5"/>
+                            <constraint firstItem="yE9-ho-USG" firstAttribute="bottom" secondItem="8gC-JH-qLG" secondAttribute="bottom" id="IMX-VQ-1SG"/>
+                            <constraint firstItem="mh3-Bc-JEb" firstAttribute="centerX" secondItem="yyE-sS-2nD" secondAttribute="centerX" id="KTT-Fb-5G6"/>
+                            <constraint firstItem="yE9-ho-USG" firstAttribute="bottom" secondItem="mh3-Bc-JEb" secondAttribute="bottom" constant="266" id="Lqn-dl-jaU"/>
+                            <constraint firstItem="8gC-JH-qLG" firstAttribute="leading" secondItem="yE9-ho-USG" secondAttribute="leading" id="ax0-e1-rpt"/>
+                            <constraint firstItem="8gC-JH-qLG" firstAttribute="top" secondItem="yyE-sS-2nD" secondAttribute="bottom" id="hYz-MZ-ej5"/>
                             <constraint firstItem="yyE-sS-2nD" firstAttribute="trailing" secondItem="yE9-ho-USG" secondAttribute="trailing" id="upy-OJ-oY3"/>
-                            <constraint firstItem="yyE-sS-2nD" firstAttribute="top" secondItem="yE9-ho-USG" secondAttribute="top" constant="20" id="yHB-NT-rYg"/>
+                            <constraint firstItem="yE9-ho-USG" firstAttribute="trailing" secondItem="8gC-JH-qLG" secondAttribute="trailing" id="wS0-4k-PjV"/>
+                            <constraint firstItem="yyE-sS-2nD" firstAttribute="top" secondItem="yE9-ho-USG" secondAttribute="top" id="yHB-NT-rYg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yE9-ho-USG"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="mh3-Bc-JEb" id="V4F-SG-khz"/>
-                        <outlet property="webView" destination="5pS-Kj-3qF" id="uWA-yf-FTB"/>
+                        <outlet property="webView" destination="8gC-JH-qLG" id="nie-dP-rnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiu-8W-K74" userLabel="First Responder" sceneMemberID="firstResponder"/>
