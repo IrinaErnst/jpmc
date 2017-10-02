@@ -24,9 +24,7 @@ struct AppleService: NetworkServiceType {
         self.provider = provider
     }
     
-    func search(with term: [String], completion: @escaping (Result<[Song], Moya.MoyaError>) -> Void) {
-        let term = term.joined(separator: "+")
-        
+    func search(with term: String, completion: @escaping (Result<[Song], Moya.MoyaError>) -> Void) {        
         let target = JPMC.search(dictionary: ["term": term])
         //requestArray(target: target) { result in
         request(target: target) { result in
@@ -47,6 +45,4 @@ struct AppleService: NetworkServiceType {
             }
         }
     }
-    
-    
 }

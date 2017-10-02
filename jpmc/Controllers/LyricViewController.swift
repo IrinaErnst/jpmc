@@ -8,12 +8,16 @@
 
 import UIKit
 
+// COMMENT: Ideally I would switch from wikie to better API service. 
+
 class LyricViewController: UIViewController {
 
     // MARK: - @IBOutlet(s)
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var lyricsTextField: UITextView!
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumTitleLabel: UILabel!
     
     // MARK: - Properties
     private lazy var lyricsWikiaService: LyricsWikiaService = LyricsWikiaService()
@@ -23,6 +27,12 @@ class LyricViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lyricsTextField.isUserInteractionEnabled = false
+        getSongLyrics()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         getSongLyrics()
     }
         
@@ -31,6 +41,10 @@ class LyricViewController: UIViewController {
         if let song = song {
             navigationBar.topItem?.title = song.songTitle
             authorNameLabel.text = "by " + song.artistName
+            albumTitleLabel.text = song.albumName
+            if let imageURL = URL(string: song.artworkUrl) {
+                albumImageView.downloadImage(url: imageURL)
+            }
             
             lyricsWikiaService.getSongLyric(with: song, completion: { [unowned self] result in
                 switch result {

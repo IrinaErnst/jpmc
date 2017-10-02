@@ -19,15 +19,13 @@ class ViewController: UIViewController {
     var songs: [Song] = [Song]()
     var selectedSong: Song?
     let cellID = "truckCell"
+    let emptyTextField = UITextView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
-        
-        let term = ["Josh", "Ritter"]
-        searchInApple(with: term)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +33,17 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Networking
-    func searchInApple(with term: [String]) {
+    func searchInApple(with term: String) {
         appleService.search(with: term, completion: { [unowned self] result in
             switch result {
             case .success(let songs):
                 self.songs = songs
+                if songs.count == 0 {
+                    self.emptyTextField.isHidden = false
+                    self.emptyTextField.text = "Result 0"
+                } else {
+                    self.emptyTextField.isHidden = true
+                }
                 self.tableView.reloadData()
                 return
             case let .failure(error):
@@ -97,21 +101,53 @@ extension ViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UISearchBarDelegate
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let term = searchBar.text?.replacingOccurrences(of: " ", with: "+") {
+            searchInApple(with: term)
+        }
+    }
+    
+}
+
 
 // MARK: - Table View Configure
 extension ViewController {
     
     func configureView(){
         configureTableView()
-        searchInApple(with: ["Josh", "Ritter"])
+        configureSearchBar()
+        configureEmptyView()
     }
     
     func configureTableView() {
-        tableView.backgroundColor = UIColor.black
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.backgroundColor = UIColor.black
         tableView.tableFooterView = UIView(frame: .zero)
     }
+    
+    func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.placeholder = "Music search (Ex, Tom Waits)"
+    }
+    
+    func configureEmptyView() {
+        emptyTextField.isUserInteractionEnabled = false
+        emptyTextField.text = "Enter artist's full name, name of the song, or name of the album in the " +
+        "search bar and press the return key"
+        emptyTextField.textColor = UIColor.lightGray
+        emptyTextField.backgroundColor = UIColor.black
+        emptyTextField.textAlignment = .center
+        emptyTextField.frame = CGRect(x: 20,
+                                      y: 150,
+                                      width: view.frame.width-40,
+                                      height: view.frame.height-300)
+        emptyTextField.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        view.addSubview(emptyTextField)
+    }
+    
 }

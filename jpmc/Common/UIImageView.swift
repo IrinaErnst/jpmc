@@ -18,7 +18,7 @@ extension UIImageView {
     func downloadImage(url: URL) {
         getDataFromUrl(url: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
+            // print(response?.suggestedFilename ?? url.lastPathComponent)
             // Download Finished
             DispatchQueue.main.async() {
                 self.image = UIImage(data: data)
