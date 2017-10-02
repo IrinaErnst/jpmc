@@ -10,6 +10,7 @@
 		6294275CC474404D18531420 /* Pods_jpmc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA8EEC4FFE633BB3C839126 /* Pods_jpmc.framework */; };
 		A70135B61F7F0FCC0054FDB1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135B51F7F0FCC0054FDB1 /* String.swift */; };
 		A70135BA1F7FC7550054FDB1 /* LyricaWikieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135B91F7FC7550054FDB1 /* LyricaWikieService.swift */; };
+		A70135BC1F81E7150054FDB1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70135BB1F81E7150054FDB1 /* WebViewController.swift */; };
 		A7E270CA1F7DF61E0074C846 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270C91F7DF61E0074C846 /* Song.swift */; };
 		A7E270CD1F7E99A10074C846 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270CC1F7E99A10074C846 /* SongTableViewCell.swift */; };
 		A7E270D01F7EA0370074C846 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E270CF1F7EA0370074C846 /* UIImageView.swift */; };
@@ -34,6 +35,7 @@
 		67D1BD2B8002A1E6147C3528 /* Pods-jpmc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jpmc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jpmc/Pods-jpmc.debug.xcconfig"; sourceTree = "<group>"; };
 		A70135B51F7F0FCC0054FDB1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A70135B91F7FC7550054FDB1 /* LyricaWikieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricaWikieService.swift; sourceTree = "<group>"; };
+		A70135BB1F81E7150054FDB1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A7E270C91F7DF61E0074C846 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		A7E270CC1F7E99A10074C846 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		A7E270CF1F7EA0370074C846 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				A7F30D641F7D896200E81F85 /* ViewController.swift */,
 				A7E270D11F7EAC780074C846 /* LyricViewController.swift */,
+				A70135BB1F81E7150054FDB1 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				A7F30D811F7D98E400E81F85 /* NetworkServiceType.swift in Sources */,
 				A7F30D7D1F7D961800E81F85 /* Provider.swift in Sources */,
 				A7F30D791F7D8C3400E81F85 /* Constants.swift in Sources */,
+				A70135BC1F81E7150054FDB1 /* WebViewController.swift in Sources */,
 				A7F30D861F7D9B7000E81F85 /* DeafaultAlamofireManager.swift in Sources */,
 				A70135B61F7F0FCC0054FDB1 /* String.swift in Sources */,
 				A7F30D841F7D9B1800E81F85 /* Deserializable.swift in Sources */,

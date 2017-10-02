@@ -11,6 +11,7 @@ import Moya
 import Result
 import JASON
 
+
 // http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json
 struct LyricsWikiaService: NetworkServiceType {
 
@@ -25,23 +26,21 @@ struct LyricsWikiaService: NetworkServiceType {
         self.provider = provider
     }
 
-    func getSongLyric(with song: Song, completion: @escaping (Result<String, Moya.MoyaError>) -> Void) {
+    func getLyrics(for song: Song, completion: @escaping (Result<Song, Moya.MoyaError>) -> Void) {
         let artist = song.artistName.replacingOccurrences(of: " ", with: "+")
-        let song = song.songTitle.replacingOccurrences(of: " ", with: "+")
-        let dictionary = ["func": "getSong", "artist": artist, "song": song, "fmt": "json"]
+        let songName = song.songTitle.replacingOccurrences(of: " ", with: "+")
+        //let dictionary = ["func": "getSong", "artist": artist, "song": song, "fmt": "json", "action": "lyrics"]
+        let dictionary = ["func": "getSong", "artist": artist, "song": songName, "fmt": "realjson", "action": "lyrics", "useSOAP": false] as [String : Any]
 
         let target = JPMC.getSong(dictionary: dictionary)
         request(target: target) { result in
             switch result {
             case let .success(json):
-                var lyrics = ""
-                print("❤️❤️❤️ JSON LYRICS: \(json)")
-                //if let results = json["results"] {
-                    if let song = json["song"] as? JSONDictionary{ 
-                        lyrics = song["lyrics"] as! String
-                    }
-                //}
-                completion(.success(lyrics))
+                
+                song.lyrics = json["lyrics"] as? String
+                song.lyricsUrl = json["url"] as? String
+                
+                completion(.success(song))
             case let .failure(error):
                 completion(.failure(MoyaError.underlying(error, nil)))
             }

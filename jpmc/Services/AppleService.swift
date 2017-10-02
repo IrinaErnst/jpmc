@@ -26,7 +26,6 @@ struct AppleService: NetworkServiceType {
     
     func search(with term: String, completion: @escaping (Result<[Song], Moya.MoyaError>) -> Void) {        
         let target = JPMC.search(dictionary: ["term": term])
-        //requestArray(target: target) { result in
         request(target: target) { result in
             switch result {
             case let .success(json):

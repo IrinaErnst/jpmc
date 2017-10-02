@@ -182,26 +182,62 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lyrics not found" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-Ek-NAf">
-                                <rect key="frame" x="20" y="184" width="335" height="473"/>
+                                <rect key="frame" x="20" y="184" width="335" height="250"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Ff7-fH-iTL"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rQa-pU-8jg">
+                                <rect key="frame" x="20" y="497" width="335" height="130"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="LIc-w5-X6g"/>
+                                </constraints>
+                                <string key="text">Unfortunately, due to licensing restrictions from some of the major music
+publishers LyricaWiki can no longer return lyrics through the LyricWiki API (where this application gets some or all of its lyrics). [...]
+(Please note: this is not the fault of the developer who created this application, but is a restriction imposed by the music publishers themselves.).</string>
+                                <color key="textColor" red="0.0" green="0.83279711008071899" blue="0.83955532312393188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLe-Ll-R1H">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.83279711008071899" blue="0.83955532312393188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ux3-7E-Cwq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Full lyrics at LyricsWiki">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openWebView:" destination="gMS-TX-53D" eventType="touchUpInside" id="teh-0c-ERc"/>
+                                    <segue destination="Z5g-I1-vc8" kind="show" id="Utu-7N-J9O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mNI-zq-Frq" firstAttribute="leading" secondItem="DUL-fH-xNZ" secondAttribute="leading" id="1e1-Qw-sXU"/>
                             <constraint firstItem="VH1-1z-chB" firstAttribute="top" secondItem="mNI-zq-Frq" secondAttribute="bottom" constant="30" id="HRX-G1-Ttt"/>
                             <constraint firstItem="VH1-1z-chB" firstAttribute="leading" secondItem="vDL-Km-tAF" secondAttribute="trailing" id="HbF-li-dIh"/>
+                            <constraint firstItem="NLe-Ll-R1H" firstAttribute="leading" secondItem="DUL-fH-xNZ" secondAttribute="leading" id="Og7-mz-dbI"/>
                             <constraint firstItem="mNI-zq-Frq" firstAttribute="trailing" secondItem="DUL-fH-xNZ" secondAttribute="trailing" id="PE2-qv-aWP"/>
+                            <constraint firstItem="NLe-Ll-R1H" firstAttribute="bottom" secondItem="DUL-fH-xNZ" secondAttribute="bottom" id="TA9-0S-7Xf"/>
                             <constraint firstItem="vDL-Km-tAF" firstAttribute="leading" secondItem="DUL-fH-xNZ" secondAttribute="leading" constant="23" id="V15-16-3UK"/>
                             <constraint firstItem="BNR-Ek-NAf" firstAttribute="leading" secondItem="DUL-fH-xNZ" secondAttribute="leading" constant="20" id="XeH-ro-2Cg"/>
+                            <constraint firstItem="DUL-fH-xNZ" firstAttribute="trailing" secondItem="rQa-pU-8jg" secondAttribute="trailing" constant="20" id="Z30-r9-wxW"/>
                             <constraint firstItem="mNI-zq-Frq" firstAttribute="top" secondItem="rot-GP-zbQ" secondAttribute="top" constant="20" id="i1c-wA-QXz"/>
+                            <constraint firstItem="DUL-fH-xNZ" firstAttribute="trailing" secondItem="NLe-Ll-R1H" secondAttribute="trailing" id="iKt-O4-TQG"/>
                             <constraint firstItem="BNR-Ek-NAf" firstAttribute="top" secondItem="vDL-Km-tAF" secondAttribute="bottom" constant="10" id="lRV-Dg-2ie"/>
                             <constraint firstItem="vDL-Km-tAF" firstAttribute="top" secondItem="mNI-zq-Frq" secondAttribute="bottom" constant="10" id="oAx-jH-Veb"/>
-                            <constraint firstItem="DUL-fH-xNZ" firstAttribute="bottom" secondItem="BNR-Ek-NAf" secondAttribute="bottom" constant="10" id="paO-P5-IFb"/>
+                            <constraint firstItem="rQa-pU-8jg" firstAttribute="leading" secondItem="DUL-fH-xNZ" secondAttribute="leading" constant="20" id="pTV-fn-b8G"/>
                             <constraint firstItem="DUL-fH-xNZ" firstAttribute="trailing" secondItem="BNR-Ek-NAf" secondAttribute="trailing" constant="20" id="tbH-aI-I6r"/>
+                            <constraint firstItem="NLe-Ll-R1H" firstAttribute="top" secondItem="rQa-pU-8jg" secondAttribute="bottom" id="uRy-7r-3HX"/>
                             <constraint firstItem="DUL-fH-xNZ" firstAttribute="trailing" secondItem="VH1-1z-chB" secondAttribute="trailing" id="ynb-70-NAc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DUL-fH-xNZ"/>
@@ -210,13 +246,78 @@
                         <outlet property="albumImageView" destination="vDL-Km-tAF" id="Fwa-5N-Oee"/>
                         <outlet property="albumTitleLabel" destination="Z27-dW-Wov" id="rj8-Wm-Hro"/>
                         <outlet property="authorNameLabel" destination="ms0-Yh-Isf" id="ZUP-Zd-Nug"/>
+                        <outlet property="lyricsPermissionsTextField" destination="BNR-Ek-NAf" id="txb-Ym-Z6B"/>
                         <outlet property="lyricsTextField" destination="BNR-Ek-NAf" id="sdP-Ti-eLa"/>
+                        <outlet property="lyricsWikiWebButton" destination="NLe-Ll-R1H" id="Bv5-n5-SBF"/>
                         <outlet property="navigationBar" destination="mNI-zq-Frq" id="iCC-4G-Bwz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fR-Zo-59F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832.79999999999995" y="116.49175412293854"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="yY1-1p-x0E">
+            <objects>
+                <viewController id="Z5g-I1-vc8" customClass="WebViewController" customModule="jpmc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="obr-jY-ixZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-sS-2nD">
+                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="je2-d8-ZWf"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="LyricsWiki" id="LUE-C7-gze">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="BackButton" id="03m-5e-Vv8">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="Z5g-I1-vc8" id="rhz-5j-nMf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pS-Kj-3qF">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-Bc-JEb">
+                                <rect key="frame" x="162" y="350.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T5t-Ix-k9q"/>
+                                    <constraint firstAttribute="width" constant="50" id="Xn6-K5-tZf"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5pS-Kj-3qF" firstAttribute="leading" secondItem="yE9-ho-USG" secondAttribute="leading" id="0ke-Ml-ZBn"/>
+                            <constraint firstItem="yyE-sS-2nD" firstAttribute="leading" secondItem="yE9-ho-USG" secondAttribute="leading" id="1i8-nH-Urq"/>
+                            <constraint firstItem="yE9-ho-USG" firstAttribute="trailing" secondItem="5pS-Kj-3qF" secondAttribute="trailing" id="CW2-zo-L0D"/>
+                            <constraint firstItem="mh3-Bc-JEb" firstAttribute="centerX" secondItem="5pS-Kj-3qF" secondAttribute="centerX" id="ZQR-3X-ait"/>
+                            <constraint firstItem="yE9-ho-USG" firstAttribute="bottom" secondItem="5pS-Kj-3qF" secondAttribute="bottom" id="dQQ-tF-cwz"/>
+                            <constraint firstItem="5pS-Kj-3qF" firstAttribute="top" secondItem="yyE-sS-2nD" secondAttribute="bottom" id="rvu-8D-foJ"/>
+                            <constraint firstItem="mh3-Bc-JEb" firstAttribute="centerY" secondItem="5pS-Kj-3qF" secondAttribute="centerY" id="tH7-Rv-NK5"/>
+                            <constraint firstItem="yyE-sS-2nD" firstAttribute="trailing" secondItem="yE9-ho-USG" secondAttribute="trailing" id="upy-OJ-oY3"/>
+                            <constraint firstItem="yyE-sS-2nD" firstAttribute="top" secondItem="yE9-ho-USG" secondAttribute="top" constant="20" id="yHB-NT-rYg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yE9-ho-USG"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="mh3-Bc-JEb" id="V4F-SG-khz"/>
+                        <outlet property="webView" destination="5pS-Kj-3qF" id="uWA-yf-FTB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oiu-8W-K74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="111"/>
         </scene>
     </scenes>
     <resources>

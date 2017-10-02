@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 // COMMENT: Ideally I would switch from wikie to better API service. 
 
@@ -18,6 +19,9 @@ class LyricViewController: UIViewController {
     @IBOutlet weak var lyricsTextField: UITextView!
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var albumTitleLabel: UILabel!
+    @IBOutlet weak var lyricsPermissionsTextField: UITextView!
+    @IBOutlet weak var lyricsWikiWebButton: UIButton!
+    
     
     // MARK: - Properties
     private lazy var lyricsWikiaService: LyricsWikiaService = LyricsWikiaService()
@@ -27,12 +31,12 @@ class LyricViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lyricsTextField.isUserInteractionEnabled = false
-        getSongLyrics()
+        configureView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
         getSongLyrics()
     }
         
@@ -46,11 +50,18 @@ class LyricViewController: UIViewController {
                 albumImageView.downloadImage(url: imageURL)
             }
             
-            lyricsWikiaService.getSongLyric(with: song, completion: { [unowned self] result in
+            lyricsWikiaService.getLyrics(for: song, completion: { [unowned self] result in
                 switch result {
-                case .success(let lyrics):
+                case .success(let song):
                     // TODO: do something
-                    self.lyricsTextField.text = lyrics
+                    self.lyricsTextField.text = song.lyrics
+                    if song.lyrics?.lowercased() == "not found" {
+                        self.lyricsPermissionsTextField.isHidden = true
+                        self.lyricsWikiWebButton.isHidden = true
+                    } else {
+                        self.lyricsPermissionsTextField.isHidden = false
+                        self.lyricsWikiWebButton.isHidden = false
+                    }
                     return
                 case let .failure(error):
                     print(error)
@@ -67,5 +78,23 @@ class LyricViewController: UIViewController {
     // MARK: - @IBAction(s)
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func openWebView(_ sender: Any) {
+        let webViewController = WebViewController()
+        webViewController.link = song?.lyricsUrl
+    }
+}
+
+// MARK: - configure view
+extension LyricViewController {
+    
+    func configureView() {
+        lyricsTextField.isUserInteractionEnabled = false
+        lyricsPermissionsTextField.isUserInteractionEnabled = false
+        lyricsPermissionsTextField.isHidden = true
+        self.lyricsWikiWebButton.isHidden = true
+        
+        getSongLyrics()
     }
 }

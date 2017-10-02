@@ -14,6 +14,8 @@ final class Song: NSObject, Deserializable {
     var artistName: String!
     var albumName: String!
     var artworkUrl: String!
+    var lyricsUrl: String?
+    var lyrics: String?
     
     // Initialiser(s)
     init(songTitle: String, artistName: String, albumName: String, artworkUrl: String) {
