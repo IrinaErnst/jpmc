@@ -197,8 +197,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="LIc-w5-X6g"/>
                                 </constraints>
-                                <string key="text">Unfortunately, due to licensing restrictions from some of the major music
-publishers LyricaWiki can no longer return lyrics through the LyricWiki API (where this application gets some or all of its lyrics). [...]
+                                <string key="text">Unfortunately, due to licensing restrictions from some of the major music publishers LyricaWiki can no longer return lyrics through the LyricWiki API (where this application gets some or all of its lyrics). [...]
 (Please note: this is not the fault of the developer who created this application, but is a restriction imposed by the music publishers themselves.).</string>
                                 <color key="textColor" red="0.0" green="0.83279711008071899" blue="0.83955532312393188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>

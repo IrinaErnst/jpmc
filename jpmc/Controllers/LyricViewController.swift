@@ -95,7 +95,8 @@ extension LyricViewController {
         lyricsTextField.isUserInteractionEnabled = false
         lyricsTextField.isHidden = false
         lyricsPermissionsTextField.isUserInteractionEnabled = false
-       
+        
+        albumImageView.contentMode = .scaleAspectFit
         getSongLyrics()
     }
 }
